@@ -828,3 +828,28 @@ body.view-control-buttons .viewControlButton {
 .viewControlButton-6 {
   margin-left: 105px;
 }
+
+
+/* Gyroscope button */
+#gyroToggle {
+  position: absolute;
+  z-index: 10;
+  right: 10px;
+  bottom: 10px;
+  min-width: 78px;
+  height: 44px;
+  padding: 0 12px;
+  border: 1px solid rgba(255,255,255,0.75);
+  border-radius: 22px;
+  background: rgba(30,36,46,0.82);
+  color: #fff;
+  font: 700 13px/44px Arial, sans-serif;
+  letter-spacing: .5px;
+  text-align: center;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+#gyroToggle.enabled { background: rgba(35,145,86,0.9); }
+#gyroToggle:active { transform: scale(.97); }
+@media (min-width: 601px) { #gyroToggle { display: none; } }

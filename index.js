@@ -29,6 +29,7 @@
   var sceneListToggleElement = document.querySelector('#sceneListToggle');
   var autorotateToggleElement = document.querySelector('#autorotateToggle');
   var fullscreenToggleElement = document.querySelector('#fullscreenToggle');
+  var gyroToggleElement = document.querySelector('#gyroToggle');
 
   // Detect desktop or mobile mode.
   if (window.matchMedia) {
@@ -69,6 +70,57 @@
 
   // Initialize viewer.
   var viewer = new Marzipano.Viewer(panoElement, viewerOpts);
+
+  // Gyroscope control. Touch and mouse controls remain active at the same time.
+  var deviceOrientationControlMethod = new DeviceOrientationControlMethod();
+  var gyroEnabled = false;
+  var controls = viewer.controls();
+  controls.registerMethod('deviceOrientation', deviceOrientationControlMethod, false);
+
+  function setGyroButtonState(enabled, label) {
+    gyroToggleElement.classList.toggle('enabled', enabled);
+    gyroToggleElement.setAttribute('aria-pressed', enabled ? 'true' : 'false');
+    gyroToggleElement.textContent = label || (enabled ? 'GYRO ON' : 'GYRO');
+  }
+
+  function enableGyroscope() {
+    deviceOrientationControlMethod.reset();
+    deviceOrientationControlMethod.getPitch(function(err, pitch) {
+      if (!err && scenes && scenes.length) {
+        var activeScene = findSceneById(document.querySelector('#sceneList .scene.current')?.getAttribute('data-id')) || scenes[0];
+        if (activeScene && activeScene.view) { activeScene.view.setPitch(pitch); }
+      }
+    });
+    controls.enableMethod('deviceOrientation');
+    gyroEnabled = true;
+    setGyroButtonState(true);
+  }
+
+  function disableGyroscope() {
+    controls.disableMethod('deviceOrientation');
+    gyroEnabled = false;
+    setGyroButtonState(false);
+  }
+
+  function requestGyroscope() {
+    if (!window.DeviceOrientationEvent) {
+      setGyroButtonState(false, 'GYRO INDISPONIBLE');
+      return;
+    }
+    if (typeof window.DeviceOrientationEvent.requestPermission === 'function') {
+      window.DeviceOrientationEvent.requestPermission().then(function(response) {
+        if (response === 'granted') { enableGyroscope(); }
+        else { setGyroButtonState(false, 'GYRO REFUSÉ'); }
+      }).catch(function() { setGyroButtonState(false, 'GYRO REFUSÉ'); });
+    } else {
+      enableGyroscope();
+    }
+  }
+
+  gyroToggleElement.addEventListener('click', function(event) {
+    event.preventDefault();
+    if (gyroEnabled) { disableGyroscope(); } else { requestGyroscope(); }
+  });
 
   // Create scenes.
   var scenes = data.scenes.map(function(data) {
@@ -170,7 +222,6 @@
   var friction = 3;
 
   // Associate view controls with elements.
-  var controls = viewer.controls();
   controls.registerMethod('upElement',    new Marzipano.ElementPressControlMethod(viewUpElement,     'y', -velocity, friction), true);
   controls.registerMethod('downElement',  new Marzipano.ElementPressControlMethod(viewDownElement,   'y',  velocity, friction), true);
   controls.registerMethod('leftElement',  new Marzipano.ElementPressControlMethod(viewLeftElement,   'x', -velocity, friction), true);
