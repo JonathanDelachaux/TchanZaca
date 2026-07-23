@@ -1,46 +1,17 @@
-TZ VIEWER — TEST DE 4 SCÈNES
+TZ VIEWER 0.2
 
-Ordre du parcours :
-1. Anim L’Atelier — vidéo 360
-2. Mural — vidéo 360
-3. Autour de Malkos — vidéo 360
-4. Partie d’échecs — photo 360
+Cette version :
+- affiche les 10 œuvres ;
+- supprime complètement le bouton de son ;
+- garde les vidéos muettes ;
+- conserve le gyroscope sur smartphone ;
+- conserve la manipulation au doigt et à la souris ;
+- masque le bouton gyroscope sur ordinateur.
 
-ÉTAPE 1 — Ajouter les médias
-Place les quatre fichiers dans le dossier « media » et donne-leur exactement ces noms :
+INSTALLATION
+Copie index.html, app.js, scenes.js et style.css dans :
+E:\GitHub\TchanZaca\test-tz-viewer
 
-media/anim-atelier.mp4
-media/mural.mp4
-media/autour-de-malkos.mp4
-media/partie-echecs.jpg
-
-ÉTAPE 2 — Publier sur GitHub
-Le contenu de ce dossier doit être placé dans un nouveau sous-dossier du dépôt, par exemple :
-
-TchanZaca/test-tz-viewer/
-
-La page de test sera alors :
-https://jonathandelachaux.github.io/TchanZaca/test-tz-viewer/
-
-Ne remplace pas encore le site principal.
-
-ÉTAPE 3 — Tester
-Sur ordinateur :
-- glisser avec la souris ;
-- molette pour zoomer ;
-- flèches gauche/droite pour changer de scène.
-
-Sur smartphone :
-- glisser avec un doigt ;
-- pincer pour zoomer ;
-- toucher « Activer le gyroscope » ;
-- bouger le téléphone ;
-- continuer à glisser avec l’index même lorsque le gyroscope est actif.
-
-IMPORTANT
-Le gyroscope doit être testé sur une page HTTPS, donc sur GitHub Pages.
-Il ne fonctionnera pas correctement en ouvrant index.html directement depuis Windows.
-
-VIDÉOS
-Les vidéos sont lues en boucle et muettes au départ, conformément aux restrictions des navigateurs.
-Le bouton « Activer le son » permet ensuite d’entendre la vidéo.
+Accepte le remplacement des fichiers.
+Ne touche pas au dossier media.
+Puis dans GitHub Desktop : Commit to main, puis Push origin.

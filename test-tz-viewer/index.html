@@ -2,38 +2,22 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#000000">
-  <title>TZ Viewer — Test 4 scènes</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Galerie 360 — Malkos</title>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <div id="viewer"></div>
-
   <div id="fade"></div>
-
   <header id="topbar">
-    <div>
-      <strong id="sceneTitle">Chargement…</strong>
-      <span id="sceneType"></span>
-    </div>
+    <strong id="sceneTitle">Chargement…</strong>
     <button id="gyroButton" type="button">Activer le gyroscope</button>
   </header>
-
-  <div id="instructions">
-    Glisse avec un doigt pour regarder autour de toi.<br>
-    Sur smartphone, active le gyroscope avec le bouton.
-  </div>
-
   <nav id="navigation">
-    <button id="previousButton" type="button" aria-label="Vue précédente">←</button>
-    <button id="nextButton" type="button" aria-label="Vue suivante">→</button>
+    <button id="previousButton" type="button" aria-label="Œuvre précédente">←</button>
+    <button id="nextButton" type="button" aria-label="Œuvre suivante">→</button>
   </nav>
-
-  <button id="soundButton" type="button" hidden>Activer le son</button>
-
   <div id="errorBox" hidden></div>
-
   <script type="module" src="./app.js"></script>
 </body>
 </html>
