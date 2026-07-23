@@ -1,0 +1,125 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+  touch-action: none;
+}
+* { box-sizing: border-box; }
+#viewer {
+  position: fixed;
+  inset: 0;
+}
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+#fade {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+  background: #000;
+  opacity: 1;
+  transition: opacity 450ms ease;
+}
+#topbar {
+  position: fixed;
+  z-index: 30;
+  top: max(12px, env(safe-area-inset-top));
+  left: 12px;
+  right: 12px;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+}
+#topbar > div,
+#topbar button,
+#navigation button,
+#soundButton {
+  pointer-events: auto;
+}
+#topbar > div {
+  padding: 10px 13px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.56);
+  backdrop-filter: blur(8px);
+}
+#sceneType {
+  opacity: .7;
+  margin-left: 8px;
+  font-size: .84rem;
+}
+button {
+  border: 1px solid rgba(255,255,255,.38);
+  border-radius: 999px;
+  background: rgba(0,0,0,.62);
+  color: #fff;
+  padding: 10px 14px;
+  font-size: 15px;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+}
+button:active { transform: scale(.97); }
+button.active {
+  background: rgba(255,255,255,.92);
+  color: #000;
+}
+#instructions {
+  position: fixed;
+  z-index: 25;
+  left: 50%;
+  bottom: max(72px, calc(env(safe-area-inset-bottom) + 72px));
+  transform: translateX(-50%);
+  width: min(90vw, 460px);
+  padding: 10px 14px;
+  text-align: center;
+  border-radius: 12px;
+  background: rgba(0,0,0,.58);
+  font-size: 14px;
+  line-height: 1.35;
+  transition: opacity 400ms ease;
+  pointer-events: none;
+}
+#navigation {
+  position: fixed;
+  z-index: 30;
+  right: 14px;
+  bottom: max(14px, env(safe-area-inset-bottom));
+  display: flex;
+  gap: 9px;
+}
+#navigation button {
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  font-size: 25px;
+}
+#soundButton {
+  position: fixed;
+  z-index: 30;
+  left: 14px;
+  bottom: max(14px, env(safe-area-inset-bottom));
+}
+#errorBox {
+  position: fixed;
+  z-index: 100;
+  inset: 20% 8%;
+  overflow: auto;
+  padding: 20px;
+  background: #250000;
+  border: 1px solid #ff7777;
+  border-radius: 14px;
+  white-space: pre-wrap;
+}
+@media (max-width: 650px) {
+  #sceneType { display: none; }
+  #topbar { align-items: flex-start; }
+  #topbar button { max-width: 48vw; }
+}
