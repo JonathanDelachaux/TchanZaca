@@ -1,8 +1,17 @@
-TZ VIEWER 0.3 — GALERIE
+TZ VIEWER 0.2
 
-1. Copie index.html, app.js, scenes.js et style.css dans test-tz-viewer.
-2. Copie aussi media/00-galerie.png dans ton dossier media existant.
-3. Ne supprime aucun autre média.
-4. Commit to main, puis Push origin.
+Cette version :
+- affiche les 10 œuvres ;
+- supprime complètement le bouton de son ;
+- garde les vidéos muettes ;
+- conserve le gyroscope sur smartphone ;
+- conserve la manipulation au doigt et à la souris ;
+- masque le bouton gyroscope sur ordinateur.
 
-La visite démarre dans la Galerie. Dans chaque œuvre, le bouton Galerie apparaît entre les flèches. Le retour réoriente approximativement la vue vers l’œuvre quittée.
+INSTALLATION
+Copie index.html, app.js, scenes.js et style.css dans :
+E:\GitHub\TchanZaca\test-tz-viewer
+
+Accepte le remplacement des fichiers.
+Ne touche pas au dossier media.
+Puis dans GitHub Desktop : Commit to main, puis Push origin.
