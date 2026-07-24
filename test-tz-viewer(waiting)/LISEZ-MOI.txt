@@ -1,8 +1,0 @@
-TZ VIEWER 0.3 — GALERIE
-
-1. Copie index.html, app.js, scenes.js et style.css dans test-tz-viewer.
-2. Copie aussi media/00-galerie.png dans ton dossier media existant.
-3. Ne supprime aucun autre média.
-4. Commit to main, puis Push origin.
-
-La visite démarre dans la Galerie. Dans chaque œuvre, le bouton Galerie apparaît entre les flèches. Le retour réoriente approximativement la vue vers l’œuvre quittée.

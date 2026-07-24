@@ -1,0 +1,17 @@
+TZ VIEWER 0.2
+
+Cette version :
+- affiche les 10 œuvres ;
+- supprime complètement le bouton de son ;
+- garde les vidéos muettes ;
+- conserve le gyroscope sur smartphone ;
+- conserve la manipulation au doigt et à la souris ;
+- masque le bouton gyroscope sur ordinateur.
+
+INSTALLATION
+Copie index.html, app.js, scenes.js et style.css dans :
+E:\GitHub\TchanZaca\test-tz-viewer
+
+Accepte le remplacement des fichiers.
+Ne touche pas au dossier media.
+Puis dans GitHub Desktop : Commit to main, puis Push origin.
