@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <title>Galerie 360 — Malkos</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main id="viewer" aria-label="Visionneuse panoramique 360 degrés"></main>
+  <div id="fade" aria-hidden="true"></div>
+
+  <header id="topbar">
+    <strong id="sceneTitle">Chargement…</strong>
+    <button id="gyroButton" type="button">Activer le gyroscope</button>
+  </header>
+
+  <nav id="navigation" aria-label="Navigation">
+    <button id="previousButton" type="button" aria-label="Œuvre précédente">←</button>
+    <button id="galleryButton" type="button">Galerie</button>
+    <button id="nextButton" type="button" aria-label="Œuvre suivante">→</button>
+  </nav>
+
+  <div id="loadingMessage">Chargement…</div>
+  <div id="errorBox" hidden></div>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
