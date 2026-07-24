@@ -1,8 +1,12 @@
-TZ VIEWER 0.3 — GALERIE
+Remplace uniquement app.js dans :
+E:\GitHub\TchanZaca\test-tz-viewer
 
-1. Copie index.html, app.js, scenes.js et style.css dans test-tz-viewer.
-2. Copie aussi media/00-galerie.png dans ton dossier media existant.
-3. Ne supprime aucun autre média.
-4. Commit to main, puis Push origin.
+Cette correction :
+- réactive les flèches depuis Galerie ;
+- flèche droite = première œuvre ;
+- flèche gauche = dernière œuvre ;
+- active les clics sur les tableaux et les numéros ;
+- conserve le déplacement de la vue ;
+- conserve le bouton Galerie et le gyroscope.
 
-La visite démarre dans la Galerie. Dans chaque œuvre, le bouton Galerie apparaît entre les flèches. Le retour réoriente approximativement la vue vers l’œuvre quittée.
+Ensuite : Commit to main, puis Push origin.
